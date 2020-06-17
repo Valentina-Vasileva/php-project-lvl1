@@ -1,0 +1,14 @@
+{
+    "name": "valentina-vasileva/php-project-lvl1",
+    "description": "Games Of Mind",
+    "authors": [
+        {
+            "name": "Ariss",
+            "email": "valentina.ways@yandex.ru"
+        }
+    ],
+    "bin": [
+    	"bin/brain-games"
+    ],
+    "require": {}
+}
