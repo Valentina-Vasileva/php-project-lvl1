@@ -1,6 +1,6 @@
 {
     "name": "valentina-vasileva/php-project-lvl1",
-    "description": "Games Of Mind",
+    "description": "Brain  Games",
     "authors": [
         {
             "name": "Ariss",
@@ -9,6 +9,14 @@
     ],
     "bin": [
     	"bin/brain-games"
-    ],
-    "require": {}
+    ],	
+    "autoload": {
+    "files": [
+    	"src/Cli.php"
+    	]
+    },
+    "require": {},
+    "require-dev": {
+        "wp-cli/php-cli-tools": "^0.11.11"
+    }
 }
