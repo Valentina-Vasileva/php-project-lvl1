@@ -7,6 +7,7 @@
             "email": "valentina.ways@yandex.ru"
         }
     ],
+    "minimum-stability": "dev",
     "bin": [
     	"bin/brain-games",
     	"bin/brain-even"
