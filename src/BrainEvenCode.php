@@ -12,6 +12,17 @@ use function cli\line;
 use function cli\prompt;
 
 /**
+ * Greetings of the Even Game.
+ *
+ * @return nothing
+ * */
+function helloBrainEven()
+{
+    line('Welcome to the Brain Game!');
+    line('Answer "yes" if the number is even, otherwise answer "no".');
+}
+
+/**
  * The one of brain games. The goal is indicating an even number for three times.
  *
  * @param string $name Name of player
