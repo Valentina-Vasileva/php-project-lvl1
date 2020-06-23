@@ -10,7 +10,8 @@
     "minimum-stability": "dev",
     "bin": [
     	"bin/brain-games",
-    	"bin/brain-even"
+    	"bin/brain-even",
+    	"bin/brain-calc"
     ],	
     "scripts": {
     	"phpcs": "phpcs"
@@ -18,7 +19,8 @@
     "autoload": {
     "files": [
     	"src/Cli.php",
-    	"src/BrainEvenCode.php"
+    	"src/BrainEvenCode.php",
+    	"src/Engine.php"
     	]
     },
     "require": {

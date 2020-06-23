@@ -10,16 +10,12 @@ namespace BrainGames\BrainEvenCode;
 
 use function cli\line;
 use function cli\prompt;
+use function BrainGames\Engine\EngineBrainGame;
+use function BrainGames\Engine\helloBrainGame;
 
-/**
- * Greetings of the Even Game.
- *
- * @return nothing
- * */
-function helloBrainEven()
+function helloBrainEven() 
 {
-    line('Welcome to the Brain Game!');
-    line('Answer "yes" if the number is even, otherwise answer "no".');
+    helloBrainGame('Answer "yes" if the number is even, otherwise answer "no".');
 }
 
 /**
@@ -32,27 +28,18 @@ function helloBrainEven()
 function brainEven($name)
 {
     for ($index = 0; $index <= 2; $index++) {
-        $number = rand();
-        line('Question: %d', $number);
-        $answer = prompt('Your answer');
-        if ($number % 2 === 0 && $answer === 'yes') {
-            line('Correct!');
-            if ($index === 2) {
-                line("Congratulations, %s!", $name);
-            }
-        } elseif ($number % 2 === 0 && $answer !== 'yes') {
-            line("'%s' is wrong answer ;(. Correct answer was 'yes'.", $answer);
-            line("Let's try again, %s!", $name);
+        $question = rand();
+        if ($question % 2 === 0) {
+            $rightAnswer = 'yes';
+        } else {
+            $rightAnswer = 'no';
+        }
+        $result = engineBrainGame($name, $question, $rightAnswer);
+        if ($result === false) {
             break;
-        } elseif ($number % 2 !== 0 && $answer === 'no') {
-            line('Correct!');
-            if ($index === 2) {
-                line("Congratulations, %s!", $name);
-            }
-        } elseif ($number % 2 !== 0 && $answer !== 'no') {
-            line("'%s' is wrong answer ;(. Correct answer was 'no'.", $answer);
-            line("Let's try again, %s!", $name);
-            break;
+        }
+        if ($index === 2) {
+            line("Congratulations, %s!", $name);
         }
     }
 }

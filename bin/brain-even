@@ -9,11 +9,14 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
+use function cli\line;
+use function cli\prompt;
+use function BrainGames\BrainEvenCode\brainEven;
 use function BrainGames\BrainEvenCode\helloBrainEven;
+
 helloBrainEven();
 
 use function BrainGames\Cli\run;
 $name = run();
 
-use function BrainGames\BrainEvenCode\brainEven;
 brainEven($name);
