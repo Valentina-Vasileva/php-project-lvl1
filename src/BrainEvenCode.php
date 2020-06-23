@@ -5,19 +5,23 @@
  *
  * @author valentina-vasileva <valentina.vasileva@yandex.ru>
  */
+
 namespace BrainGames\BrainEvenCode;
 
 use function cli\line;
 use function cli\prompt;
 use function BrainGames\Engine\engineBrainGame;
 use function BrainGames\Engine\helloBrainGame;
+use function BrainGames\Engine\lastGame;
+use function BrainGames\Engine\firstGame;
+use function BrainGames\Engine\congrats;
 
 /**
  * Instructions for brain-even.
  *
  * @return nothing
- * */
-function helloBrainEven() 
+ */
+function helloBrainEven()
 {
     helloBrainGame('Answer "yes" if the number is even, otherwise answer "no".');
 }
@@ -28,10 +32,10 @@ function helloBrainEven()
  * @param string $name Name of player
  *
  * @return nothing
- * */
+ */
 function brainEven($name)
 {
-    for ($index = 0; $index <= 2; $index++) {
+    for ($index = firstGame(), $lastGame = lastGame(); $index <= $lastGame; $index++) {
         $question = rand();
         if ($question % 2 === 0) {
             $rightAnswer = 'yes';
@@ -42,8 +46,8 @@ function brainEven($name)
         if ($result === false) {
             break;
         }
-        if ($index === 2) {
-            line("Congratulations, %s!", $name);
+        if ($index === $lastGame) {
+            congrats($name);
         }
     }
 }
