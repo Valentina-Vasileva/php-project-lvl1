@@ -5,14 +5,18 @@
  *
  * @author valentina-vasileva <valentina.vasileva@yandex.ru>
  */
-
 namespace BrainGames\BrainEvenCode;
 
 use function cli\line;
 use function cli\prompt;
-use function BrainGames\Engine\EngineBrainGame;
+use function BrainGames\Engine\engineBrainGame;
 use function BrainGames\Engine\helloBrainGame;
 
+/**
+ * Instructions for brain-even.
+ *
+ * @return nothing
+ * */
 function helloBrainEven() 
 {
     helloBrainGame('Answer "yes" if the number is even, otherwise answer "no".');
