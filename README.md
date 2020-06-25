@@ -2,7 +2,7 @@
 ![](https://github.com/Valentina-Vasileva/php-project-lvl1/workflows/PHP%20test/badge.svg)
 
 Installation of the package and game launch (brain-even):
-<script id="asciicast-l5RZGDG6qiVpgLDCLaGB5kIaV" src="https://asciinema.org/a/l5RZGDG6qiVpgLDCLaGB5kIaV.js" async></script>
+[![asciicast](https://asciinema.org/a/l5RZGDG6qiVpgLDCLaGB5kIaV.svg)](https://asciinema.org/a/l5RZGDG6qiVpgLDCLaGB5kIaV)
 
 Game launch (brain-calc):
-<script id="asciicast-s8ROQVsEzqQE6U4dQpPyY286J" src="https://asciinema.org/a/s8ROQVsEzqQE6U4dQpPyY286J.js" async></script>
+[![asciicast](https://asciinema.org/a/s8ROQVsEzqQE6U4dQpPyY286J.svg)](https://asciinema.org/a/s8ROQVsEzqQE6U4dQpPyY286J)
