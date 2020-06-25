@@ -6,3 +6,6 @@ Installation of the package and game launch (brain-even):
 
 Game launch (brain-calc):
 [![asciicast](https://asciinema.org/a/s8ROQVsEzqQE6U4dQpPyY286J.svg)](https://asciinema.org/a/s8ROQVsEzqQE6U4dQpPyY286J)
+
+Game launch (brain-gcd):
+[![asciicast](https://asciinema.org/a/mqLek3rlbAhVOZGQwOj682xzg.svg)](https://asciinema.org/a/mqLek3rlbAhVOZGQwOj682xzg)
