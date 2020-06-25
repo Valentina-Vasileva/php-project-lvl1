@@ -1,15 +1,13 @@
 <?php
 
 /**
- * It's all about one of brain game where a player has to indicate an even numbers.
+ * It's all about one of brain game where a player has to indicate an even number.
  *
  * @author valentina-vasileva <valentina.vasileva@yandex.ru>
  */
 
 namespace BrainGames\BrainEvenCode;
 
-use function cli\line;
-use function cli\prompt;
 use function BrainGames\Engine\engineBrainGame;
 use function BrainGames\Engine\helloBrainGame;
 use function BrainGames\Engine\lastGame;

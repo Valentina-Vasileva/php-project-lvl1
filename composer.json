@@ -18,9 +18,9 @@
     },
     "autoload": {
     "files": [
-    	"src/Cli.php",
     	"src/BrainEvenCode.php",
-    	"src/Engine.php"
+        "src/Engine.php",
+        "src/BrainCalCode.php"
     	]
     },
     "require": {

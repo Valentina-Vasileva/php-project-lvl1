@@ -14,8 +14,10 @@ use function cli\prompt;
  * */
 function helloBrainGame($instructions)
 {
+    line();
     line('Welcome to the Brain Game!');
     line('%s', $instructions);
+    line();
 }
 
 /**
@@ -27,6 +29,7 @@ function run()
 {
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
+    line();
     return $name;
 }
 
@@ -40,8 +43,8 @@ function run()
 function engineBrainGame($name, $question, $rightAnswer)
 {
     line('Question: %s', $question);
-    $answer = prompt('Your answer');
-    if ($answer === $rightAnswer) {
+    $answer = strval(prompt('Your answer'));
+    if ($answer === strval($rightAnswer)) {
         line('Correct!');
     } else {
         line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answer, $rightAnswer);
