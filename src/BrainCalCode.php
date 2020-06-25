@@ -15,7 +15,7 @@ use function BrainGames\Engine\firstGame;
 use function BrainGames\Engine\congrats;
 
 /**
- * Instructions for brain-even.
+ * Instructions for brain-calc.
  *
  * @return nothing
  */
