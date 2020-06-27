@@ -27,7 +27,7 @@ function helloBrainGame($instructions)
  * */
 function run()
 {
-    $name = prompt('May I have your name?');
+    $name = prompt('May I have your name?', false, '');
     line("Hello, %s!", $name);
     line();
     return $name;
