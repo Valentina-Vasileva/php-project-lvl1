@@ -1,12 +1,12 @@
 <?php
 
 /**
- * It's all about one of brain game where a player has to write a gcd of two numbers.
+ * It's all about one of the brain game where a player has to indicate an even number.
  *
  * @author valentina-vasileva <valentina.vasileva@yandex.ru>
  */
 
-namespace BrainGames\BrainGcdCode;
+namespace BrainGames\games\BrainEvenCode;
 
 use function BrainGames\Engine\engineBrainGame;
 use function BrainGames\Engine\helloBrainGame;
@@ -15,36 +15,31 @@ use function BrainGames\Engine\firstGame;
 use function BrainGames\Engine\congrats;
 
 /**
- * Instructions for brain-gcd.
+ * Instructions for brain-even.
  *
  * @return nothing
  */
-function helloBrainGcd()
+function helloBrainEven()
 {
-    helloBrainGame('Find the greatest common divisor of given numbers.');
+    helloBrainGame('Answer "yes" if the number is even, otherwise answer "no".');
 }
 
 /**
- * The one of brain games. The goal is writing a gcd of two numbers.
+ * The one of the brain games. The goal is indicating an even number for three times.
  *
  * @param string $name Name of player
  *
  * @return nothing
  */
-function brainGcd($name)
+function brainEven($name)
 {
     for ($index = firstGame(), $lastGame = lastGame(); $index <= $lastGame; $index++) {
-        $rand1 = rand(0, 100);
-        $rand2 = rand(0, 100);
-        $question = $rand1 . ' ' . $rand2;
-        while ($rand1 !== 0 && $rand2 !== 0) {
-            if ($rand1 > $rand2) {
-                $rand1 = $rand1 % $rand2;
-            } else {
-                $rand2 = $rand2 % $rand1;
-            }
+        $question = rand();
+        if ($question % 2 === 0) {
+            $rightAnswer = 'yes';
+        } else {
+            $rightAnswer = 'no';
         }
-        $rightAnswer = $rand1 + $rand2;
         $result = engineBrainGame($name, $question, $rightAnswer);
         if ($result === false) {
             break;

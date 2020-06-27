@@ -1,12 +1,12 @@
 <?php
 
 /**
- * It's all about one of brain game where a player has to write a number of arithmetic progression.
+ * It's all about one of the brain game where a player has to write a number of arithmetic progression.
  *
  * @author valentina-vasileva <valentina.vasileva@yandex.ru>
  */
 
-namespace BrainGames\BrainProgCode;
+namespace BrainGames\games\BrainProgCode;
 
 use function BrainGames\Engine\engineBrainGame;
 use function BrainGames\Engine\helloBrainGame;
@@ -25,7 +25,7 @@ function helloBrainProg()
 }
 
 /**
- * The one of brain games. The goal is writing a number of arithmetic progression.
+ * The one of the brain games. The goal is writing a number of arithmetic progression.
  *
  * @param string $name Name of player
  *

@@ -10,8 +10,8 @@ if (file_exists($autoloadPath1)) {
 }
 
 use function BrainGames\Engine\run;
-use function BrainGames\BrainGcdCode\brainGcd;
-use function BrainGames\BrainGcdCode\helloBrainGcd;
+use function BrainGames\games\BrainGcdCode\brainGcd;
+use function BrainGames\games\BrainGcdCode\helloBrainGcd;
 
 helloBrainGcd();
 $name = run();

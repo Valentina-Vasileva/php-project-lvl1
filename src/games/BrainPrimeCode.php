@@ -1,12 +1,12 @@
 <?php
 
 /**
- * It's all about one of brain game where a player has to indicate a prime number.
+ * It's all about one of the brain game where a player has to indicate a prime number.
  *
  * @author valentina-vasileva <valentina.vasileva@yandex.ru>
  */
 
-namespace BrainGames\BrainPrimeCode;
+namespace BrainGames\games\BrainPrimeCode;
 
 use function BrainGames\Engine\engineBrainGame;
 use function BrainGames\Engine\helloBrainGame;
@@ -25,7 +25,7 @@ function helloBrainPrime()
 }
 
 /**
- * The one of brain games. The goal is indicating a prime number.
+ * The one of the brain games. The goal is indicating a prime number.
  *
  * @param string $name Name of player
  *
@@ -36,11 +36,13 @@ function brainPrime($name)
     for ($index = firstGame(), $lastGame = lastGame(); $index <= $lastGame; $index++) {
         $question = rand(0, 1000);
         $maxDevider = sqrt($question);
+        $rightAnswer = '';
         for ($devider = 2; $devider <= $maxDevider; $devider++) {
             if ($question % $devider === 0) {
-                $rightAnswer = "yes";
-            } else {
                 $rightAnswer = "no";
+                break;
+            } else {
+                $rightAnswer = "yes";
             }
         }
         $result = engineBrainGame($name, $question, $rightAnswer);

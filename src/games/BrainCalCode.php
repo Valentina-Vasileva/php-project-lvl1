@@ -1,12 +1,12 @@
 <?php
 
 /**
- * It's all about one of brain game where a player has to add, subtract and multiply numbers.
+ * It's all about one of the brain game where a player has to add, subtract and multiply numbers.
  *
  * @author valentina-vasileva <valentina.vasileva@yandex.ru>
  */
 
-namespace BrainGames\BraiCalCode;
+namespace BrainGames\games\BrainCalCode;
 
 use function BrainGames\Engine\engineBrainGame;
 use function BrainGames\Engine\helloBrainGame;
@@ -25,7 +25,7 @@ function helloBrainCalc()
 }
 
 /**
- * The one of brain games. The goal is telling an answer of expression.
+ * The one of the brain games. The goal is telling an answer of expression.
  *
  * @param string $name Name of player
  *
