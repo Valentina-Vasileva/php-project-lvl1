@@ -12,3 +12,6 @@ The game launch (brain-gcd):
 
 The game launch (brain-progression):
 [![asciicast](https://asciinema.org/a/YBXCEypNrZdtEQkdFHVLOCG8s.svg)](https://asciinema.org/a/YBXCEypNrZdtEQkdFHVLOCG8s)
+
+The game launch (brain-prime):
+[![asciicast](https://asciinema.org/a/WmFp0H9sOP38zsBLcIynJicR2.svg)](https://asciinema.org/a/WmFp0H9sOP38zsBLcIynJicR2)
