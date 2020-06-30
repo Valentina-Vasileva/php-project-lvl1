@@ -16,9 +16,9 @@ use function BrainGames\Engine\firstGame;
 
 /**
  * This function answers the question if a number is prime or not.
- * 
+ *
  * @param int $number Random integer
- * 
+ *
  * @return "yes" or "no"
  */
 function isPrime($number)
@@ -33,13 +33,13 @@ function isPrime($number)
 
 /**
  * The one of the brain games. The goal is indicating a prime number.
- * 
+ *
  * @return nothing
  */
 function brainPrime()
 {
     helloBrainGame('Answer "yes" if given number is prime. Otherwise answer "no".');
-    $name = run();    
+    $name = run();
     for ($gameNumber = firstGame(), $lastGame = lastGame(); $gameNumber <= $lastGame; $gameNumber++) {
         $question = rand(0, 1000);
         $maxDevider = sqrt($question);

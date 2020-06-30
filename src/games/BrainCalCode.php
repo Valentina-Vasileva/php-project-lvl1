@@ -16,7 +16,7 @@ use function BrainGames\Engine\firstGame;
 
 /**
  * The one of the brain games. The goal is telling an answer of expression.
- * 
+ *
  * @return nothing
  */
 function brainCalc()

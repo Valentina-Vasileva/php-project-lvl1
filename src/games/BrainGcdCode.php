@@ -16,7 +16,7 @@ use function BrainGames\Engine\firstGame;
 
 /**
  * The one of the brain games. The goal is writing a gcd of two numbers.
- * 
+ *
  * @return nothing
  */
 function brainGcd()
