@@ -15,6 +15,23 @@ use function BrainGames\Engine\lastGame;
 use function BrainGames\Engine\firstGame;
 
 /**
+ * This function answers the question if a number is prime or not.
+ * 
+ * @param int $number Random integer
+ * 
+ * @return "yes" or "no"
+ */
+function isPrime($number)
+{
+    for ($devider = 2, $maxDevider = sqrt($number); $devider <= $maxDevider; $devider++) {
+        if ($number % $devider === 0) {
+            return "no";
+        }
+    }
+    return "yes";
+}
+
+/**
  * The one of the brain games. The goal is indicating a prime number.
  * 
  * @return nothing
@@ -26,15 +43,7 @@ function brainPrime()
     for ($gameNumber = firstGame(), $lastGame = lastGame(); $gameNumber <= $lastGame; $gameNumber++) {
         $question = rand(0, 1000);
         $maxDevider = sqrt($question);
-        $rightAnswer = '';
-        for ($devider = 2; $devider <= $maxDevider; $devider++) {
-            if ($question % $devider === 0) {
-                $rightAnswer = "no";
-                break;
-            } else {
-                $rightAnswer = "yes";
-            }
-        }
+        $rightAnswer = isPrime($question);
         $result = engineBrainGame($name, $question, $rightAnswer, $gameNumber);
         if ($result === false) {
             break;

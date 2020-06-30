@@ -24,7 +24,8 @@ function brainCalc()
     helloBrainGame('What is the result of the expression?');
     $name = run();
     for ($gameNumber = firstGame(), $lastGame = lastGame(); $gameNumber <= $lastGame; $gameNumber++) {
-        $choise = rand(1, 3);
+        $numberOfOperations = 3;
+        $choise = rand(1, $numberOfOperations);
         $rand1 = rand(-100, 100);
         $rand2 = rand(-100, 100);
         if ($choise === 1) {
