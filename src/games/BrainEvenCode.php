@@ -8,30 +8,21 @@
 
 namespace BrainGames\games\BrainEvenCode;
 
-use function BrainGames\Engine\engineBrainGame;
+use function BrainGames\Engine\run;
 use function BrainGames\Engine\helloBrainGame;
+use function BrainGames\Engine\engineBrainGame;
 use function BrainGames\Engine\lastGame;
 use function BrainGames\Engine\firstGame;
 
 /**
- * Instructions for brain-even.
- *
- * @return nothing
- */
-function helloBrainEven()
-{
-    helloBrainGame('Answer "yes" if the number is even, otherwise answer "no".');
-}
-
-/**
  * The one of the brain games. The goal is indicating an even number for three times.
  *
- * @param string $name Name of player
- *
  * @return nothing
  */
-function brainEven($name)
+function brainEven()
 {
+    helloBrainGame('Answer "yes" if the number is even, otherwise answer "no".');
+    $name = run();
     for ($gameNumber = firstGame(), $lastGame = lastGame(); $gameNumber <= $lastGame; $gameNumber++) {
         $question = rand();
         if ($question % 2 === 0) {

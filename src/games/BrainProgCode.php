@@ -8,30 +8,21 @@
 
 namespace BrainGames\games\BrainProgCode;
 
-use function BrainGames\Engine\engineBrainGame;
+use function BrainGames\Engine\run;
 use function BrainGames\Engine\helloBrainGame;
+use function BrainGames\Engine\engineBrainGame;
 use function BrainGames\Engine\lastGame;
 use function BrainGames\Engine\firstGame;
 
 /**
- * Instructions for brain-progression.
- *
- * @return nothing
- */
-function helloBrainProg()
-{
-    helloBrainGame('What number is missing in the progression?');
-}
-
-/**
  * The one of the brain games. The goal is writing a number of arithmetic progression.
  *
- * @param string $name Name of player
- *
  * @return nothing
  */
-function brainProg($name)
+function brainProg()
 {
+    helloBrainGame('What number is missing in the progression?');
+    $name = run();
     for ($gameNumber = firstGame(), $lastGame = lastGame(); $gameNumber <= $lastGame; $gameNumber++) {
         $randIndexForQuestion = rand(0, 9);
         $stepForProgression = rand(0, 100);

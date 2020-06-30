@@ -8,30 +8,21 @@
 
 namespace BrainGames\games\BrainCalCode;
 
-use function BrainGames\Engine\engineBrainGame;
+use function BrainGames\Engine\run;
 use function BrainGames\Engine\helloBrainGame;
+use function BrainGames\Engine\engineBrainGame;
 use function BrainGames\Engine\lastGame;
 use function BrainGames\Engine\firstGame;
 
 /**
- * Instructions for brain-calc.
- *
+ * The one of the brain games. The goal is telling an answer of expression.
+ * 
  * @return nothing
  */
-function helloBrainCalc()
+function brainCalc()
 {
     helloBrainGame('What is the result of the expression?');
-}
-
-/**
- * The one of the brain games. The goal is telling an answer of expression.
- *
- * @param string $name Name of player
- *
- * @return nothing
- */
-function brainCalc($name)
-{
+    $name = run();
     for ($gameNumber = firstGame(), $lastGame = lastGame(); $gameNumber <= $lastGame; $gameNumber++) {
         $choise = rand(1, 3);
         $rand1 = rand(-100, 100);

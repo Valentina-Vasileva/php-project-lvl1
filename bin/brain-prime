@@ -9,10 +9,6 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-use function BrainGames\Engine\run;
 use function BrainGames\games\BrainPrimeCode\brainPrime;
-use function BrainGames\games\BrainPrimeCode\helloBrainPrime;
 
-helloBrainPrime();
-$name = run();
-brainPrime($name);
+brainPrime();

@@ -8,30 +8,21 @@
 
 namespace BrainGames\games\BrainGcdCode;
 
-use function BrainGames\Engine\engineBrainGame;
+use function BrainGames\Engine\run;
 use function BrainGames\Engine\helloBrainGame;
+use function BrainGames\Engine\engineBrainGame;
 use function BrainGames\Engine\lastGame;
 use function BrainGames\Engine\firstGame;
 
 /**
- * Instructions for brain-gcd.
- *
+ * The one of the brain games. The goal is writing a gcd of two numbers.
+ * 
  * @return nothing
  */
-function helloBrainGcd()
+function brainGcd()
 {
     helloBrainGame('Find the greatest common divisor of given numbers.');
-}
-
-/**
- * The one of the brain games. The goal is writing a gcd of two numbers.
- *
- * @param string $name Name of player
- *
- * @return nothing
- */
-function brainGcd($name)
-{
+    $name = run();
     for ($gameNumber = firstGame(), $lastGame = lastGame(); $gameNumber <= $lastGame; $gameNumber++) {
         $rand1 = rand(0, 100);
         $rand2 = rand(0, 100);

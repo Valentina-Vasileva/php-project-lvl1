@@ -8,30 +8,21 @@
 
 namespace BrainGames\games\BrainPrimeCode;
 
-use function BrainGames\Engine\engineBrainGame;
+use function BrainGames\Engine\run;
 use function BrainGames\Engine\helloBrainGame;
+use function BrainGames\Engine\engineBrainGame;
 use function BrainGames\Engine\lastGame;
 use function BrainGames\Engine\firstGame;
 
 /**
- * Instructions for brain-progression.
- *
+ * The one of the brain games. The goal is indicating a prime number.
+ * 
  * @return nothing
  */
-function helloBrainPrime()
+function brainPrime()
 {
     helloBrainGame('Answer "yes" if given number is prime. Otherwise answer "no".');
-}
-
-/**
- * The one of the brain games. The goal is indicating a prime number.
- *
- * @param string $name Name of player
- *
- * @return nothing
- */
-function brainPrime($name)
-{
+    $name = run();    
     for ($gameNumber = firstGame(), $lastGame = lastGame(); $gameNumber <= $lastGame; $gameNumber++) {
         $question = rand(0, 1000);
         $maxDevider = sqrt($question);
