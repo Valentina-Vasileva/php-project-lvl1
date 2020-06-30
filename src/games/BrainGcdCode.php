@@ -12,7 +12,6 @@ use function BrainGames\Engine\engineBrainGame;
 use function BrainGames\Engine\helloBrainGame;
 use function BrainGames\Engine\lastGame;
 use function BrainGames\Engine\firstGame;
-use function BrainGames\Engine\congrats;
 
 /**
  * Instructions for brain-gcd.
@@ -33,7 +32,7 @@ function helloBrainGcd()
  */
 function brainGcd($name)
 {
-    for ($index = firstGame(), $lastGame = lastGame(); $index <= $lastGame; $index++) {
+    for ($gameNumber = firstGame(), $lastGame = lastGame(); $gameNumber <= $lastGame; $gameNumber++) {
         $rand1 = rand(0, 100);
         $rand2 = rand(0, 100);
         $question = $rand1 . ' ' . $rand2;
@@ -45,12 +44,9 @@ function brainGcd($name)
             }
         }
         $rightAnswer = $rand1 + $rand2;
-        $result = engineBrainGame($name, $question, $rightAnswer);
+        $result = engineBrainGame($name, $question, $rightAnswer, $gameNumber);
         if ($result === false) {
             break;
-        }
-        if ($index === $lastGame) {
-            congrats($name);
         }
     }
 }

@@ -12,7 +12,6 @@ use function BrainGames\Engine\engineBrainGame;
 use function BrainGames\Engine\helloBrainGame;
 use function BrainGames\Engine\lastGame;
 use function BrainGames\Engine\firstGame;
-use function BrainGames\Engine\congrats;
 
 /**
  * Instructions for brain-progression.
@@ -33,23 +32,21 @@ function helloBrainProg()
  */
 function brainProg($name)
 {
-    for ($index = firstGame(), $lastGame = lastGame(); $index <= $lastGame; $index++) {
+    for ($gameNumber = firstGame(), $lastGame = lastGame(); $gameNumber <= $lastGame; $gameNumber++) {
         $randIndexForQuestion = rand(0, 9);
         $stepForProgression = rand(0, 100);
         $firstOfProgression = rand(0, 100);
         $arithmeticProgression[0] = $firstOfProgression;
-        for ($ind = 1; $ind <= 9; $ind++) {
-            $arithmeticProgression[$ind] = $arithmeticProgression[$ind - 1] + $stepForProgression;
+        $lastIndexOfProgression = 9;
+        for ($index = 1; $index <= $lastIndexOfProgression; $index++) {
+            $arithmeticProgression[$index] = $arithmeticProgression[$index - 1] + $stepForProgression;
         }
         $rightAnswer = $arithmeticProgression[$randIndexForQuestion];
         $arithmeticProgression[$randIndexForQuestion] = '..';
         $question = implode(" ", $arithmeticProgression);
-        $result = engineBrainGame($name, $question, $rightAnswer);
+        $result = engineBrainGame($name, $question, $rightAnswer, $gameNumber);
         if ($result === false) {
             break;
-        }
-        if ($index === $lastGame) {
-            congrats($name);
         }
     }
 }

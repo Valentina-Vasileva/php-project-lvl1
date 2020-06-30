@@ -40,12 +40,16 @@ function run()
  *
  * @return false
  * */
-function engineBrainGame($name, $question, $rightAnswer)
+function engineBrainGame($name, $question, $rightAnswer, $gameNumber)
 {
+    $lastGame = lastGame();
     line('Question: %s', $question);
     $answer = strval(prompt('Your answer'));
     if ($answer === strval($rightAnswer)) {
         line('Correct!');
+        if ($gameNumber === $lastGame) {
+            line("Congratulations, %s!", $name);
+        }
     } else {
         line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answer, $rightAnswer);
         line("Let's try again, %s!", $name);
@@ -71,16 +75,4 @@ function lastGame()
 function firstGame()
 {
     return 1;
-}
-
-/**
- * Congrats for being winner of the brain game.
- *
- * @param $name Name of player
- *
- * @return nothing;
- */
-function congrats($name)
-{
-    line("Congratulations, %s!", $name);
 }

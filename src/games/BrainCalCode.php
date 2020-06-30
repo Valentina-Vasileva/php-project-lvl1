@@ -12,7 +12,6 @@ use function BrainGames\Engine\engineBrainGame;
 use function BrainGames\Engine\helloBrainGame;
 use function BrainGames\Engine\lastGame;
 use function BrainGames\Engine\firstGame;
-use function BrainGames\Engine\congrats;
 
 /**
  * Instructions for brain-calc.
@@ -33,7 +32,7 @@ function helloBrainCalc()
  */
 function brainCalc($name)
 {
-    for ($index = firstGame(), $lastGame = lastGame(); $index <= $lastGame; $index++) {
+    for ($gameNumber = firstGame(), $lastGame = lastGame(); $gameNumber <= $lastGame; $gameNumber++) {
         $choise = rand(1, 3);
         $rand1 = rand(-100, 100);
         $rand2 = rand(-100, 100);
@@ -47,12 +46,9 @@ function brainCalc($name)
             $question = $rand1 . ' * ' . $rand2;
             $rightAnswer = $rand1 * $rand2;
         }
-        $result = engineBrainGame($name, $question, $rightAnswer);
+        $result = engineBrainGame($name, $question, $rightAnswer, $gameNumber);
         if ($result === false) {
             break;
-        }
-        if ($index === $lastGame) {
-            congrats($name);
         }
     }
 }

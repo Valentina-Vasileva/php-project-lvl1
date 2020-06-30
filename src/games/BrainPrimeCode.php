@@ -12,7 +12,6 @@ use function BrainGames\Engine\engineBrainGame;
 use function BrainGames\Engine\helloBrainGame;
 use function BrainGames\Engine\lastGame;
 use function BrainGames\Engine\firstGame;
-use function BrainGames\Engine\congrats;
 
 /**
  * Instructions for brain-progression.
@@ -33,7 +32,7 @@ function helloBrainPrime()
  */
 function brainPrime($name)
 {
-    for ($index = firstGame(), $lastGame = lastGame(); $index <= $lastGame; $index++) {
+    for ($gameNumber = firstGame(), $lastGame = lastGame(); $gameNumber <= $lastGame; $gameNumber++) {
         $question = rand(0, 1000);
         $maxDevider = sqrt($question);
         $rightAnswer = '';
@@ -45,12 +44,9 @@ function brainPrime($name)
                 $rightAnswer = "yes";
             }
         }
-        $result = engineBrainGame($name, $question, $rightAnswer);
+        $result = engineBrainGame($name, $question, $rightAnswer, $gameNumber);
         if ($result === false) {
             break;
-        }
-        if ($index === $lastGame) {
-            congrats($name);
         }
     }
 }

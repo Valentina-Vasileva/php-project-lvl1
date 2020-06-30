@@ -12,7 +12,6 @@ use function BrainGames\Engine\engineBrainGame;
 use function BrainGames\Engine\helloBrainGame;
 use function BrainGames\Engine\lastGame;
 use function BrainGames\Engine\firstGame;
-use function BrainGames\Engine\congrats;
 
 /**
  * Instructions for brain-even.
@@ -33,19 +32,16 @@ function helloBrainEven()
  */
 function brainEven($name)
 {
-    for ($index = firstGame(), $lastGame = lastGame(); $index <= $lastGame; $index++) {
+    for ($gameNumber = firstGame(), $lastGame = lastGame(); $gameNumber <= $lastGame; $gameNumber++) {
         $question = rand();
         if ($question % 2 === 0) {
             $rightAnswer = 'yes';
         } else {
             $rightAnswer = 'no';
         }
-        $result = engineBrainGame($name, $question, $rightAnswer);
+        $result = engineBrainGame($name, $question, $rightAnswer, $gameNumber);
         if ($result === false) {
             break;
-        }
-        if ($index === $lastGame) {
-            congrats($name);
         }
     }
 }
