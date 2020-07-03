@@ -9,6 +9,7 @@
 namespace BrainGames\games\BrainPrimeCode;
 
 use function BrainGames\Engine\engineBrainGame;
+
 use const BrainGames\Engine\FIRST_GAME;
 use const BrainGames\Engine\LAST_GAME;
 
@@ -23,10 +24,10 @@ function isPrime($number)
 {
     for ($devider = 2, $maxDevider = sqrt($number); $devider <= $maxDevider; $devider++) {
         if ($number % $devider === 0) {
-            return "no";
+            return false;
         }
     }
-    return "yes";
+    return true;
 }
 
 /**
@@ -41,7 +42,11 @@ function brainPrime()
     for ($gameNumber = FIRST_GAME; $gameNumber <= LAST_GAME; $gameNumber++) {
         $question = rand(0, 1000);
         $maxDevider = sqrt($question);
-        $rightAnswer = isPrime($question);
+        if (isPrime($question)) {
+            $rightAnswer = "yes";
+        } else {
+            $rightAnswer = "no";
+        }
         $questionAndAnswer[$question] = $rightAnswer;
     }
     engineBrainGame($questionAndAnswer, $instructions);

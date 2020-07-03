@@ -9,6 +9,7 @@
 namespace BrainGames\games\BrainGcdCode;
 
 use function BrainGames\Engine\engineBrainGame;
+
 use const BrainGames\Engine\FIRST_GAME;
 use const BrainGames\Engine\LAST_GAME;
 
@@ -16,7 +17,7 @@ use const BrainGames\Engine\LAST_GAME;
  * This function calculates a gcd of two numbers.
  *
  * @param $number1 Number $number2 Number
- * 
+ *
  * @return $number1 + $number2 Gcd of two numbers
  */
 function gcd($number1, $number2)

@@ -9,6 +9,7 @@
 namespace BrainGames\games\BrainEvenCode;
 
 use function BrainGames\Engine\engineBrainGame;
+
 use const BrainGames\Engine\FIRST_GAME;
 use const BrainGames\Engine\LAST_GAME;
 

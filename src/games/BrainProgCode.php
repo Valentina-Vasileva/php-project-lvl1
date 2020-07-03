@@ -9,13 +9,14 @@
 namespace BrainGames\games\BrainProgCode;
 
 use function BrainGames\Engine\engineBrainGame;
+
 use const BrainGames\Engine\FIRST_GAME;
 use const BrainGames\Engine\LAST_GAME;
 
 function getProgression($firstOfProgression, $stepForProgression, $lastIndexOfProgression)
 {
     $arithmeticProgression = [];
-    for ($index = 0; $index <= $lastIndexOfProgression; $index++) { 
+    for ($index = 0; $index <= $lastIndexOfProgression; $index++) {
         $arithmeticProgression[$index] = $firstOfProgression + $stepForProgression * $index;
     }
     return $arithmeticProgression;
@@ -44,5 +45,5 @@ function brainProg()
         $question = implode(" ", $arithmeticProgression);
         $questionAndAnswer[$question] = $rightAnswer;
     }
-    engineBrainGame($questionAndAnswer, $instructions);    
+    engineBrainGame($questionAndAnswer, $instructions);
 }

@@ -11,7 +11,7 @@ const LAST_GAME = 3;
 /**
  * Engine of brain games.
  *
- * @param $questionAndAnswer Array of questions to player and right answers $instructions Instructions for a brain game. 
+ * @param $questionAndAnswer Array of questions to player and right answers $instructions Instructions for a brain game
  *
  * @return nothing
  * */
