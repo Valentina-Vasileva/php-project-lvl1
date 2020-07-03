@@ -13,6 +13,25 @@ use const BrainGames\Engine\FIRST_GAME;
 use const BrainGames\Engine\LAST_GAME;
 
 /**
+ * This function calculates a gcd of two numbers.
+ *
+ * @param $number1 Number $number2 Number
+ * 
+ * @return $number1 + $number2 Gcd of two numbers
+ */
+function gcd($number1, $number2)
+{
+    while ($number1 !== 0 && $number2 !== 0) {
+        if ($number1 > $number2) {
+            $number1 = $number1 % $number2;
+        } else {
+            $number2 = $number2 % $number1;
+        }
+    }
+    return $number1 + $number2;
+}
+
+/**
  * The one of the brain games. The goal is writing a gcd of two numbers.
  *
  * @return nothing
@@ -25,14 +44,7 @@ function brainGcd()
         $rand1 = rand(0, 100);
         $rand2 = rand(0, 100);
         $question = $rand1 . ' ' . $rand2;
-        while ($rand1 !== 0 && $rand2 !== 0) {
-            if ($rand1 > $rand2) {
-                $rand1 = $rand1 % $rand2;
-            } else {
-                $rand2 = $rand2 % $rand1;
-            }
-        }
-        $rightAnswer = $rand1 + $rand2;
+        $rightAnswer = gcd($rand1, $rand2);
         $questionAndAnswer[$question] = $rightAnswer;
     }
     engineBrainGame($questionAndAnswer, $instructions);
