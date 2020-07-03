@@ -8,8 +8,16 @@ use function cli\prompt;
 const FIRST_GAME = 1;
 const LAST_GAME = 3;
 
-function helloBrainGame($instructions)
+/**
+ * Engine of brain games.
+ *
+ * @param $questionAndAnswer Array of questions to player and right answers $instructions Instructions for a brain game. 
+ *
+ * @return nothing
+ * */
+function engineBrainGame($questionAndAnswer, $instructions)
 {
+    // Hello part of a brain game
     line();
     line('Welcome to the Brain Game!');
     line('%s', $instructions);
@@ -17,20 +25,8 @@ function helloBrainGame($instructions)
     $name = prompt('May I have your name?', false, '');
     line("Hello, %s!", $name);
     line();
-    return $name;
-}
-
-/**
- * Allows to add instructions of game.
- *
- * @param $name Name of player $question Question to player $rightAnswer Right answer for question
- *
- * @return false
- * */
-function engineBrainGame($questionAndAnswer, $instructions)
-{
-    $name = helloBrainGame($instructions);
     $gameNumber = 0;
+    // Process of game starts
     foreach ($questionAndAnswer as $question => $rightAnswer) {
         $gameNumber++;
         line('Question: %s', $question);

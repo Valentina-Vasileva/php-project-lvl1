@@ -8,11 +8,9 @@
 
 namespace BrainGames\games\BrainPrimeCode;
 
-use function BrainGames\Engine\run;
-use function BrainGames\Engine\helloBrainGame;
 use function BrainGames\Engine\engineBrainGame;
-use function BrainGames\Engine\lastGame;
-use function BrainGames\Engine\firstGame;
+use const BrainGames\Engine\FIRST_GAME;
+use const BrainGames\Engine\LAST_GAME;
 
 /**
  * This function answers the question if a number is prime or not.
@@ -38,15 +36,13 @@ function isPrime($number)
  */
 function brainPrime()
 {
-    helloBrainGame('Answer "yes" if given number is prime. Otherwise answer "no".');
-    $name = run();
-    for ($gameNumber = firstGame(), $lastGame = lastGame(); $gameNumber <= $lastGame; $gameNumber++) {
+    $instructions = ('Answer "yes" if given number is prime. Otherwise answer "no".');
+    $questionAndAnswer = [];
+    for ($gameNumber = FIRST_GAME; $gameNumber <= LAST_GAME; $gameNumber++) {
         $question = rand(0, 1000);
         $maxDevider = sqrt($question);
         $rightAnswer = isPrime($question);
-        $result = engineBrainGame($name, $question, $rightAnswer, $gameNumber);
-        if ($result === false) {
-            break;
-        }
+        $questionAndAnswer[$question] = $rightAnswer;
     }
+    engineBrainGame($questionAndAnswer, $instructions);
 }

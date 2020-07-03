@@ -8,11 +8,9 @@
 
 namespace BrainGames\games\BrainGcdCode;
 
-use function BrainGames\Engine\run;
-use function BrainGames\Engine\helloBrainGame;
 use function BrainGames\Engine\engineBrainGame;
-use function BrainGames\Engine\lastGame;
-use function BrainGames\Engine\firstGame;
+use const BrainGames\Engine\FIRST_GAME;
+use const BrainGames\Engine\LAST_GAME;
 
 /**
  * The one of the brain games. The goal is writing a gcd of two numbers.
@@ -21,9 +19,9 @@ use function BrainGames\Engine\firstGame;
  */
 function brainGcd()
 {
-    helloBrainGame('Find the greatest common divisor of given numbers.');
-    $name = run();
-    for ($gameNumber = firstGame(), $lastGame = lastGame(); $gameNumber <= $lastGame; $gameNumber++) {
+    $instructions = ('Find the greatest common divisor of given numbers.');
+    $questionAndAnswer = [];
+    for ($gameNumber = FIRST_GAME; $gameNumber <= LAST_GAME; $gameNumber++) {
         $rand1 = rand(0, 100);
         $rand2 = rand(0, 100);
         $question = $rand1 . ' ' . $rand2;
@@ -35,9 +33,7 @@ function brainGcd()
             }
         }
         $rightAnswer = $rand1 + $rand2;
-        $result = engineBrainGame($name, $question, $rightAnswer, $gameNumber);
-        if ($result === false) {
-            break;
-        }
+        $questionAndAnswer[$question] = $rightAnswer;
     }
+    engineBrainGame($questionAndAnswer, $instructions);
 }

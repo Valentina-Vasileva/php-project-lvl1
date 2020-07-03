@@ -8,11 +8,9 @@
 
 namespace BrainGames\games\BrainCalCode;
 
-use function BrainGames\Engine\run;
-use function BrainGames\Engine\helloBrainGame;
 use function BrainGames\Engine\engineBrainGame;
-use function BrainGames\Engine\lastGame;
-use function BrainGames\Engine\firstGame;
+use const BrainGames\Engine\FIRST_GAME;
+use const BrainGames\Engine\LAST_GAME;
 
 /**
  * The one of the brain games. The goal is telling an answer of expression.
@@ -21,9 +19,9 @@ use function BrainGames\Engine\firstGame;
  */
 function brainCalc()
 {
-    helloBrainGame('What is the result of the expression?');
-    $name = run();
-    for ($gameNumber = firstGame(), $lastGame = lastGame(); $gameNumber <= $lastGame; $gameNumber++) {
+    $instructions = ('What is the result of the expression?');
+    $questionAndAnswer = [];
+    for ($gameNumber = FIRST_GAME; $gameNumber <= LAST_GAME; $gameNumber++) {
         $numberOfOperations = 3;
         $choise = rand(1, $numberOfOperations);
         $rand1 = rand(-100, 100);
@@ -38,9 +36,7 @@ function brainCalc()
             $question = $rand1 . ' * ' . $rand2;
             $rightAnswer = $rand1 * $rand2;
         }
-        $result = engineBrainGame($name, $question, $rightAnswer, $gameNumber);
-        if ($result === false) {
-            break;
-        }
+        $questionAndAnswer[$question] = $rightAnswer;
     }
+    engineBrainGame($questionAndAnswer, $instructions);
 }

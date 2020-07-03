@@ -13,7 +13,7 @@ use const BrainGames\Engine\FIRST_GAME;
 use const BrainGames\Engine\LAST_GAME;
 
 /**
- * The one of the brain games. The goal is indicating an even number for three times.
+ * The one of the brain games. The goal is indicating an even number.
  *
  * @return nothing
  */
