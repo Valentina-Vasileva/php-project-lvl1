@@ -26,13 +26,16 @@ function brainCalc()
         $choise = rand(1, $numberOfOperations);
         $rand1 = rand(-100, 100);
         $rand2 = rand(-100, 100);
-        if ($choise === 1) {
+        $operationOfSum = 1;
+        $operationOfSubtraction = 2;
+        $operationOfMultiplication = 3;
+        if ($choise === $operationOfSum) {
             $question = $rand1 . ' + ' . $rand2;
             $rightAnswer = $rand1 + $rand2;
-        } elseif ($choise === 2) {
+        } elseif ($choise ===  $operationOfSubtraction) {
             $question = $rand1 . ' - ' . $rand2;
             $rightAnswer = $rand1 - $rand2;
-        } elseif ($choise === 3) {
+        } elseif ($choise === $operationOfMultiplication) {
             $question = $rand1 . ' * ' . $rand2;
             $rightAnswer = $rand1 * $rand2;
         }
