@@ -12,6 +12,16 @@ use function BrainGames\Engine\engineBrainGame;
 use const BrainGames\Engine\FIRST_GAME;
 use const BrainGames\Engine\LAST_GAME;
 
+function getProgression($firstOfProgression, $stepForProgression, $lastIndexOfProgression)
+{
+    $arithmeticProgression = [];
+    for ($index = 0; $index <= $lastIndexOfProgression; $index++) { 
+        $arithmeticProgression[$index] = $firstOfProgression + $stepForProgression * $index;
+    }
+    return $arithmeticProgression;
+}
+
+
 /**
  * The one of the brain games. The goal is writing a number of arithmetic progression.
  *
@@ -22,15 +32,14 @@ function brainProg()
     $instructions = ('What number is missing in the progression?');
     $questionAndAnswer = [];
     for ($gameNumber = FIRST_GAME; $gameNumber <= LAST_GAME; $gameNumber++) {
-        $randIndexForQuestion = rand(0, 9);
-        $stepForProgression = rand(0, 100);
+        // Get parameters for arithmetic progression
         $firstOfProgression = rand(0, 100);
-        $arithmeticProgression[0] = $firstOfProgression;
+        $stepForProgression = rand(0, 100);
         $lastIndexOfProgression = 9;
-        for ($index = 1; $index <= $lastIndexOfProgression; $index++) {
-            $arithmeticProgression[$index] = $arithmeticProgression[$index - 1] + $stepForProgression;
-        }
-        $rightAnswer = $arithmeticProgression[$randIndexForQuestion];
+        $arithmeticProgression = getProgression($firstOfProgression, $stepForProgression, $lastIndexOfProgression);
+        // Get progression with a hidden member for a question to player
+        $randIndexForQuestion = rand(0, 9);
+        $rightAnswer =  $arithmeticProgression[$randIndexForQuestion];
         $arithmeticProgression[$randIndexForQuestion] = '..';
         $question = implode(" ", $arithmeticProgression);
         $questionAndAnswer[$question] = $rightAnswer;
