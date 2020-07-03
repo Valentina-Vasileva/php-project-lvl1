@@ -8,11 +8,9 @@
 
 namespace BrainGames\games\BrainEvenCode;
 
-use function BrainGames\Engine\run;
-use function BrainGames\Engine\helloBrainGame;
 use function BrainGames\Engine\engineBrainGame;
-use function BrainGames\Engine\lastGame;
-use function BrainGames\Engine\firstGame;
+use const BrainGames\Engine\FIRST_GAME;
+use const BrainGames\Engine\LAST_GAME;
 
 /**
  * The one of the brain games. The goal is indicating an even number for three times.
@@ -21,18 +19,16 @@ use function BrainGames\Engine\firstGame;
  */
 function brainEven()
 {
-    helloBrainGame('Answer "yes" if the number is even, otherwise answer "no".');
-    $name = run();
-    for ($gameNumber = firstGame(), $lastGame = lastGame(); $gameNumber <= $lastGame; $gameNumber++) {
+    $instructions = ('Answer "yes" if the number is even, otherwise answer "no".');
+    $questionAndAnswer = [];
+    for ($gameNumber = FIRST_GAME; $gameNumber <= LAST_GAME; $gameNumber++) {
         $question = rand();
         if ($question % 2 === 0) {
             $rightAnswer = 'yes';
         } else {
             $rightAnswer = 'no';
         }
-        $result = engineBrainGame($name, $question, $rightAnswer, $gameNumber);
-        if ($result === false) {
-            break;
-        }
+        $questionAndAnswer[$question] = $rightAnswer;
     }
+    engineBrainGame($questionAndAnswer, $instructions);
 }
