@@ -9,18 +9,36 @@ const FIRST_GAME = 1;
 const LAST_GAME = 3;
 
 /**
- * Hello part of brain games.
- *
- * @param $$instructions Instructions for a brain game
- *
- * @return $name Name of player
+ * Welcome part of brain games.
+ * 
+ * @return nothing
  */
-function hello($instructions)
+function welcomeToTheBrainGame()
 {
     line();
     line('Welcome to the Brain Game!');
+}
+
+/**
+ * Shows instructions of a brain game.
+ *
+ * @param $instructions Instructions of a brain game
+ *
+ * @return nothing
+ */
+function showInstructions($instructions)
+{
     line('%s', $instructions);
     line();
+}
+
+/**
+ * Gets the name of player and greets.
+ *
+ * @return $name Name of player
+ */
+function getNameOfPlayerAndHello()
+{
     $name = prompt('May I have your name?', false, '');
     line("Hello, %s!", $name);
     line();
@@ -28,7 +46,7 @@ function hello($instructions)
 }
 
 /**
- * Engine of brain games.
+ * The engine of brain games.
  *
  * @param $questionAndAnswer Array of questions to player and right answers $instructions Instructions for a brain game
  *
@@ -36,7 +54,9 @@ function hello($instructions)
  * */
 function engineBrainGame($questionAndAnswer, $instructions)
 {
-    $name = hello($instructions);
+    welcomeToTheBrainGame();
+    showInstructions($instructions);
+    $name = getNameOfPlayerAndHello();
     $gameNumber = 0;
     foreach ($questionAndAnswer as $question => $rightAnswer) {
         $gameNumber++;
