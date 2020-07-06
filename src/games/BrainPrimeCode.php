@@ -10,7 +10,6 @@ namespace BrainGames\games\BrainPrimeCode;
 
 use function BrainGames\Engine\engineBrainGame;
 
-use const BrainGames\Engine\FIRST_GAME;
 use const BrainGames\Engine\LAST_GAME;
 
 /**
@@ -39,7 +38,7 @@ function brainPrime()
 {
     $instructions = ('Answer "yes" if given number is prime. Otherwise answer "no".');
     $questionAndAnswer = [];
-    for ($gameNumber = FIRST_GAME; $gameNumber <= LAST_GAME; $gameNumber++) {
+    for ($gameNumber = 0; $gameNumber < LAST_GAME; $gameNumber++) {
         $question = rand(0, 1000);
         $maxDevider = sqrt($question);
         if (isPrime($question)) {

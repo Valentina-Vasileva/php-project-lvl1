@@ -10,7 +10,6 @@ namespace BrainGames\games\BrainCalCode;
 
 use function BrainGames\Engine\engineBrainGame;
 
-use const BrainGames\Engine\FIRST_GAME;
 use const BrainGames\Engine\LAST_GAME;
 
 /**
@@ -22,7 +21,7 @@ function brainCalc()
 {
     $instructions = ('What is the result of the expression?');
     $questionAndAnswer = [];
-    for ($gameNumber = FIRST_GAME; $gameNumber <= LAST_GAME; $gameNumber++) {
+    for ($gameNumber = 0; $gameNumber < LAST_GAME; $gameNumber++) {
         $numberOfOperations = 3;
         $choise = rand(1, $numberOfOperations);
         $rand1 = rand(-100, 100);

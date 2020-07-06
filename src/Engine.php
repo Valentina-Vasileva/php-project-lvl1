@@ -5,7 +5,6 @@ namespace BrainGames\Engine;
 use function cli\line;
 use function cli\prompt;
 
-const FIRST_GAME = 1;
 const LAST_GAME = 3;
 
 /**

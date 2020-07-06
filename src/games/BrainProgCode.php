@@ -10,7 +10,6 @@ namespace BrainGames\games\BrainProgCode;
 
 use function BrainGames\Engine\engineBrainGame;
 
-use const BrainGames\Engine\FIRST_GAME;
 use const BrainGames\Engine\LAST_GAME;
 
 function getProgression($firstOfProgression, $stepForProgression, $lastIndexOfProgression)
@@ -32,7 +31,7 @@ function brainProg()
 {
     $instructions = ('What number is missing in the progression?');
     $questionAndAnswer = [];
-    for ($gameNumber = FIRST_GAME; $gameNumber <= LAST_GAME; $gameNumber++) {
+    for ($gameNumber = 0; $gameNumber < LAST_GAME; $gameNumber++) {
         // Get parameters for arithmetic progression
         $firstOfProgression = rand(0, 100);
         $stepForProgression = rand(0, 100);

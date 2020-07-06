@@ -10,7 +10,6 @@ namespace BrainGames\games\BrainGcdCode;
 
 use function BrainGames\Engine\engineBrainGame;
 
-use const BrainGames\Engine\FIRST_GAME;
 use const BrainGames\Engine\LAST_GAME;
 
 /**
@@ -41,7 +40,7 @@ function brainGcd()
 {
     $instructions = ('Find the greatest common divisor of given numbers.');
     $questionAndAnswer = [];
-    for ($gameNumber = FIRST_GAME; $gameNumber <= LAST_GAME; $gameNumber++) {
+    for ($gameNumber = 0; $gameNumber < LAST_GAME; $gameNumber++) {
         $rand1 = rand(0, 100);
         $rand2 = rand(0, 100);
         $question = $rand1 . ' ' . $rand2;

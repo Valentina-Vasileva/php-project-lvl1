@@ -10,7 +10,6 @@ namespace BrainGames\games\BrainEvenCode;
 
 use function BrainGames\Engine\engineBrainGame;
 
-use const BrainGames\Engine\FIRST_GAME;
 use const BrainGames\Engine\LAST_GAME;
 
 /**
@@ -22,7 +21,7 @@ function brainEven()
 {
     $instructions = ('Answer "yes" if the number is even, otherwise answer "no".');
     $questionAndAnswer = [];
-    for ($gameNumber = FIRST_GAME; $gameNumber <= LAST_GAME; $gameNumber++) {
+    for ($gameNumber = 0; $gameNumber < LAST_GAME; $gameNumber++) {
         $question = rand();
         if ($question % 2 === 0) {
             $rightAnswer = 'yes';
