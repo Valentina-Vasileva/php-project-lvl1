@@ -10,7 +10,7 @@ const LAST_GAME = 3;
 
 /**
  * Welcome part of brain games.
- * 
+ *
  * @return nothing
  */
 function welcomeToTheBrainGame()
