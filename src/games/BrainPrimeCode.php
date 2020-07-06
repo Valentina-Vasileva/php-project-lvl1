@@ -21,6 +21,9 @@ use const BrainGames\Engine\LAST_GAME;
  */
 function isPrime($number)
 {
+    if ($number < 2) {
+        return false;
+    }
     for ($devider = 2, $maxDevider = sqrt($number); $devider <= $maxDevider; $devider++) {
         if ($number % $devider === 0) {
             return false;
