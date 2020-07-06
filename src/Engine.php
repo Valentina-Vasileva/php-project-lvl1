@@ -52,21 +52,20 @@ function getNameOfPlayerAndHello()
  *
  * @return nothing
  * */
-function engineBrainGame($questionAndAnswer, $instructions)
+function engineBrainGame(array $questionAndAnswer, string $instructions)
 {
     welcomeToTheBrainGame();
     showInstructions($instructions);
     $name = getNameOfPlayerAndHello();
     foreach ($questionAndAnswer as $question => $rightAnswer) {
         line('Question: %s', $question);
-        $answer = strval(prompt('Your answer'));
-        if ($answer === strval($rightAnswer)) {
-            line('Correct!');
-        } else {
+        $answer = prompt('Your answer');
+        if ($answer !== $rightAnswer) {
             line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answer, $rightAnswer);
             line("Let's try again, %s!", $name);
             return;
         }
+        line('Correct!');
     }
     line("Congratulations, %s!", $name);
 }

@@ -43,7 +43,7 @@ function brainProg()
         $rightAnswer =  $arithmeticProgression[$randIndexForQuestion];
         $arithmeticProgression[$randIndexForQuestion] = '..';
         $question = implode(" ", $arithmeticProgression);
-        $questionAndAnswer[$question] = $rightAnswer;
+        $questionAndAnswer[$question] = strval($rightAnswer);
     }
     engineBrainGame($questionAndAnswer, $instructions);
 }

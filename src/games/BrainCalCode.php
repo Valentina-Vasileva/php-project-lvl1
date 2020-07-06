@@ -40,7 +40,7 @@ function brainCalc()
             $question = $rand1 . ' * ' . $rand2;
             $rightAnswer = $rand1 * $rand2;
         }
-        $questionAndAnswer[$question] = $rightAnswer;
+        $questionAndAnswer[$question] = strval($rightAnswer);
     }
     engineBrainGame($questionAndAnswer, $instructions);
 }
