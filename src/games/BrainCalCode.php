@@ -22,23 +22,23 @@ function brainCalc()
     $instructions = ('What is the result of the expression?');
     $questionAndAnswer = [];
     for ($gameNumber = 0; $gameNumber < LAST_GAME; $gameNumber++) {
-        $numberOfOperations = 3;
-        $choise = rand(1, $numberOfOperations);
         $rand1 = rand(-100, 100);
         $rand2 = rand(-100, 100);
-        $operationOfSum = 1;
-        $operationOfSubtraction = 2;
-        $operationOfMultiplication = 3;
-        if ($choise === $operationOfSum) {
-            $question = $rand1 . ' + ' . $rand2;
-            $rightAnswer = $rand1 + $rand2;
-        } elseif ($choise ===  $operationOfSubtraction) {
-            $question = $rand1 . ' - ' . $rand2;
-            $rightAnswer = $rand1 - $rand2;
-        } elseif ($choise === $operationOfMultiplication) {
-            $question = $rand1 . ' * ' . $rand2;
-            $rightAnswer = $rand1 * $rand2;
+        $operators = ['+','-','*'];
+        $keyOfRandomOperator = array_rand($operators, 1);
+        $operatorForThisCase = $operators[$keyOfRandomOperator];
+        switch ($operatorForThisCase) {
+            case '+':
+                $rightAnswer = $rand1 + $rand2;
+                break;
+            case '-':
+                $rightAnswer = $rand1 - $rand2;
+                break;
+            case '*':
+                $rightAnswer = $rand1 * $rand2;
+                break;
         }
+        $question = "{$rand1} {$operatorForThisCase} {$rand2}";
         $questionAndAnswer[$question] = strval($rightAnswer);
     }
     engineBrainGame($questionAndAnswer, $instructions);
