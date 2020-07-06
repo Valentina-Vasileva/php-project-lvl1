@@ -57,20 +57,16 @@ function engineBrainGame($questionAndAnswer, $instructions)
     welcomeToTheBrainGame();
     showInstructions($instructions);
     $name = getNameOfPlayerAndHello();
-    $gameNumber = 0;
     foreach ($questionAndAnswer as $question => $rightAnswer) {
-        $gameNumber++;
         line('Question: %s', $question);
         $answer = strval(prompt('Your answer'));
         if ($answer === strval($rightAnswer)) {
             line('Correct!');
-            if ($gameNumber === LAST_GAME) {
-                    line("Congratulations, %s!", $name);
-            }
         } else {
             line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answer, $rightAnswer);
             line("Let's try again, %s!", $name);
-            break;
+            return;
         }
     }
+    line("Congratulations, %s!", $name);
 }
