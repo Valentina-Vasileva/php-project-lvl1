@@ -23,11 +23,7 @@ function brainEven()
     $questionAndAnswer = [];
     for ($gameNumber = 0; $gameNumber < LAST_GAME; $gameNumber++) {
         $question = rand();
-        if ($question % 2 === 0) {
-            $rightAnswer = 'yes';
-        } else {
-            $rightAnswer = 'no';
-        }
+        $question % 2 === 0 ? $rightAnswer = 'yes' : $rightAnswer = 'no';
         $questionAndAnswer[$question] = $rightAnswer;
     }
     engineBrainGame($questionAndAnswer, $instructions);
