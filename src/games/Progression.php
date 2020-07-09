@@ -12,11 +12,11 @@ use function BrainGames\Engine\engine;
 
 use const BrainGames\Engine\LAST_GAME;
 
-function getProgression($firstOfProgression, $stepForProgression, $lastIndexOfProgression)
+function getProgression($firstElement, $step, $lastIndex)
 {
     $arithmeticProgression = [];
-    for ($index = 0; $index <= $lastIndexOfProgression; $index++) {
-        $arithmeticProgression[$index] = $firstOfProgression + $stepForProgression * $index;
+    for ($index = 0; $index <= $lastIndex; $index++) {
+        $arithmeticProgression[$index] = $firstElement + $step * $index;
     }
     return $arithmeticProgression;
 }
@@ -33,10 +33,10 @@ function brainProg()
     $questionAndAnswer = [];
     for ($gameNumber = 0; $gameNumber < LAST_GAME; $gameNumber++) {
         // Get parameters for arithmetic progression
-        $firstOfProgression = rand(0, 100);
-        $stepForProgression = rand(0, 100);
-        $lastIndexOfProgression = 9;
-        $arithmeticProgression = getProgression($firstOfProgression, $stepForProgression, $lastIndexOfProgression);
+        $firstElement = rand(0, 100);
+        $step = rand(0, 100);
+        $lastIndex = 9;
+        $arithmeticProgression = getProgression($firstElement, $step, $lastIndex);
         // Get progression with a hidden member for a question to player
         $randIndexForQuestion = rand(0, 9);
         $rightAnswer =  $arithmeticProgression[$randIndexForQuestion];
