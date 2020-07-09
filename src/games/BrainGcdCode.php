@@ -43,7 +43,7 @@ function brainGcd()
     for ($gameNumber = 0; $gameNumber < LAST_GAME; $gameNumber++) {
         $rand1 = rand(0, 100);
         $rand2 = rand(0, 100);
-        $question = $rand1 . ' ' . $rand2;
+        $question = "{$rand1} {$rand2}";
         $rightAnswer = gcd($rand1, $rand2);
         $questionAndAnswer[$question] = strval($rightAnswer);
     }
