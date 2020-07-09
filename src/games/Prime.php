@@ -44,11 +44,7 @@ function brainPrime()
     for ($gameNumber = 0; $gameNumber < LAST_GAME; $gameNumber++) {
         $question = rand(0, 1000);
         $maxDevider = sqrt($question);
-        if (isPrime($question)) {
-            $rightAnswer = "yes";
-        } else {
-            $rightAnswer = "no";
-        }
+        isPrime($question) ? $rightAnswer = "yes" : $rightAnswer = "no";
         $questionAndAnswer[$question] = $rightAnswer;
     }
     engine($questionAndAnswer, $description);
