@@ -26,8 +26,8 @@ function brainCalc()
         $rand2 = rand(-100, 100);
         $operators = ['+','-','*'];
         $keyOfRandomOperator = array_rand($operators, 1);
-        $operatorForThisCase = $operators[$keyOfRandomOperator];
-        switch ($operatorForThisCase) {
+        $operator = $operators[$keyOfRandomOperator];
+        switch ($operator) {
             case '+':
                 $rightAnswer = $rand1 + $rand2;
                 break;
@@ -38,7 +38,7 @@ function brainCalc()
                 $rightAnswer = $rand1 * $rand2;
                 break;
         }
-        $question = "{$rand1} {$operatorForThisCase} {$rand2}";
+        $question = "{$rand1} {$operator} {$rand2}";
         $questionAndAnswer[$question] = strval($rightAnswer);
     }
     engine($questionAndAnswer, $description);
