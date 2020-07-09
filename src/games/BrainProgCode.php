@@ -29,7 +29,7 @@ function getProgression($firstOfProgression, $stepForProgression, $lastIndexOfPr
  */
 function brainProg()
 {
-    $instructions = ('What number is missing in the progression?');
+    $description = ('What number is missing in the progression?');
     $questionAndAnswer = [];
     for ($gameNumber = 0; $gameNumber < LAST_GAME; $gameNumber++) {
         // Get parameters for arithmetic progression
@@ -44,5 +44,5 @@ function brainProg()
         $question = implode(" ", $arithmeticProgression);
         $questionAndAnswer[$question] = strval($rightAnswer);
     }
-    engineBrainGame($questionAndAnswer, $instructions);
+    engineBrainGame($questionAndAnswer, $description);
 }

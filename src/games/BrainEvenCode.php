@@ -19,12 +19,12 @@ use const BrainGames\Engine\LAST_GAME;
  */
 function brainEven()
 {
-    $instructions = ('Answer "yes" if the number is even, otherwise answer "no".');
+    $description = ('Answer "yes" if the number is even, otherwise answer "no".');
     $questionAndAnswer = [];
     for ($gameNumber = 0; $gameNumber < LAST_GAME; $gameNumber++) {
         $question = rand();
         $question % 2 === 0 ? $rightAnswer = 'yes' : $rightAnswer = 'no';
         $questionAndAnswer[$question] = $rightAnswer;
     }
-    engineBrainGame($questionAndAnswer, $instructions);
+    engineBrainGame($questionAndAnswer, $description);
 }

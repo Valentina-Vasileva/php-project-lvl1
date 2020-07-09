@@ -39,7 +39,7 @@ function isPrime($number)
  */
 function brainPrime()
 {
-    $instructions = ('Answer "yes" if given number is prime. Otherwise answer "no".');
+    $description = ('Answer "yes" if given number is prime. Otherwise answer "no".');
     $questionAndAnswer = [];
     for ($gameNumber = 0; $gameNumber < LAST_GAME; $gameNumber++) {
         $question = rand(0, 1000);
@@ -51,5 +51,5 @@ function brainPrime()
         }
         $questionAndAnswer[$question] = $rightAnswer;
     }
-    engineBrainGame($questionAndAnswer, $instructions);
+    engineBrainGame($questionAndAnswer, $description);
 }

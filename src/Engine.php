@@ -14,11 +14,11 @@ const LAST_GAME = 3;
  *
  * @return nothing
  * */
-function engineBrainGame(array $questionAndAnswer, string $instructions)
+function engineBrainGame(array $questionAndAnswer, string $description)
 {
     line();
     line('Welcome to the Brain Game!');
-    line('%s', $instructions);
+    line('%s', $description);
     line();
     $name = prompt('May I have your name?', false, '');
     line("Hello, %s!", $name);

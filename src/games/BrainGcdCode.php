@@ -38,7 +38,7 @@ function gcd($number1, $number2)
  */
 function brainGcd()
 {
-    $instructions = ('Find the greatest common divisor of given numbers.');
+    $description = ('Find the greatest common divisor of given numbers.');
     $questionAndAnswer = [];
     for ($gameNumber = 0; $gameNumber < LAST_GAME; $gameNumber++) {
         $rand1 = rand(0, 100);
@@ -47,5 +47,5 @@ function brainGcd()
         $rightAnswer = gcd($rand1, $rand2);
         $questionAndAnswer[$question] = strval($rightAnswer);
     }
-    engineBrainGame($questionAndAnswer, $instructions);
+    engineBrainGame($questionAndAnswer, $description);
 }

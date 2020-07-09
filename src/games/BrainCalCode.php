@@ -19,7 +19,7 @@ use const BrainGames\Engine\LAST_GAME;
  */
 function brainCalc()
 {
-    $instructions = ('What is the result of the expression?');
+    $description = ('What is the result of the expression?');
     $questionAndAnswer = [];
     for ($gameNumber = 0; $gameNumber < LAST_GAME; $gameNumber++) {
         $rand1 = rand(-100, 100);
@@ -41,5 +41,5 @@ function brainCalc()
         $question = "{$rand1} {$operatorForThisCase} {$rand2}";
         $questionAndAnswer[$question] = strval($rightAnswer);
     }
-    engineBrainGame($questionAndAnswer, $instructions);
+    engineBrainGame($questionAndAnswer, $description);
 }
