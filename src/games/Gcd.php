@@ -6,7 +6,7 @@
  * @author valentina-vasileva <valentina.vasileva@yandex.ru>
  */
 
-namespace BrainGames\games\BrainGcdCode;
+namespace BrainGames\games\Gcd;
 
 use function BrainGames\Engine\engine;
 

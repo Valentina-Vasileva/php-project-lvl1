@@ -6,7 +6,7 @@
  * @author valentina-vasileva <valentina.vasileva@yandex.ru>
  */
 
-namespace BrainGames\games\BrainEvenCode;
+namespace BrainGames\games\Even;
 
 use function BrainGames\Engine\engine;
 

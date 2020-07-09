@@ -6,7 +6,7 @@
  * @author valentina-vasileva <valentina.vasileva@yandex.ru>
  */
 
-namespace BrainGames\games\BrainCalCode;
+namespace BrainGames\games\Calc;
 
 use function BrainGames\Engine\engine;
 

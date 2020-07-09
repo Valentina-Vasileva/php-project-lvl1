@@ -20,12 +20,12 @@
     },
     "autoload": {
     "files": [
-    	"src/games/BrainEvenCode.php",
+    	"src/games/Even.php",
         "src/Engine.php",
-        "src/games/BrainCalCode.php",
-        "src/games/BrainGcdCode.php",
-        "src/games/BrainProgCode.php",
-        "src/games/BrainPrimeCode.php"
+        "src/games/Calc.php",
+        "src/games/Gcd.php",
+        "src/games/Progression.php",
+        "src/games/Prime.php"
     	]
     },
     "require": {

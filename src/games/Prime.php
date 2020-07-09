@@ -6,7 +6,7 @@
  * @author valentina-vasileva <valentina.vasileva@yandex.ru>
  */
 
-namespace BrainGames\games\BrainPrimeCode;
+namespace BrainGames\games\Prime;
 
 use function BrainGames\Engine\engine;
 

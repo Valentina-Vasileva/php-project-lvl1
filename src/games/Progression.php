@@ -6,7 +6,7 @@
  * @author valentina-vasileva <valentina.vasileva@yandex.ru>
  */
 
-namespace BrainGames\games\BrainProgCode;
+namespace BrainGames\games\Progression;
 
 use function BrainGames\Engine\engine;
 
