@@ -8,7 +8,7 @@
 
 namespace BrainGames\games\BrainGcdCode;
 
-use function BrainGames\Engine\engineBrainGame;
+use function BrainGames\Engine\engine;
 
 use const BrainGames\Engine\LAST_GAME;
 
@@ -47,5 +47,5 @@ function brainGcd()
         $rightAnswer = gcd($rand1, $rand2);
         $questionAndAnswer[$question] = strval($rightAnswer);
     }
-    engineBrainGame($questionAndAnswer, $description);
+    engine($questionAndAnswer, $description);
 }

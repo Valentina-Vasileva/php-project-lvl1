@@ -8,7 +8,7 @@
 
 namespace BrainGames\games\BrainEvenCode;
 
-use function BrainGames\Engine\engineBrainGame;
+use function BrainGames\Engine\engine;
 
 use const BrainGames\Engine\LAST_GAME;
 
@@ -26,5 +26,5 @@ function brainEven()
         $question % 2 === 0 ? $rightAnswer = 'yes' : $rightAnswer = 'no';
         $questionAndAnswer[$question] = $rightAnswer;
     }
-    engineBrainGame($questionAndAnswer, $description);
+    engine($questionAndAnswer, $description);
 }

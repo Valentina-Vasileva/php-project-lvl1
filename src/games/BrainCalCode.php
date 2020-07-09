@@ -8,7 +8,7 @@
 
 namespace BrainGames\games\BrainCalCode;
 
-use function BrainGames\Engine\engineBrainGame;
+use function BrainGames\Engine\engine;
 
 use const BrainGames\Engine\LAST_GAME;
 
@@ -41,5 +41,5 @@ function brainCalc()
         $question = "{$rand1} {$operatorForThisCase} {$rand2}";
         $questionAndAnswer[$question] = strval($rightAnswer);
     }
-    engineBrainGame($questionAndAnswer, $description);
+    engine($questionAndAnswer, $description);
 }

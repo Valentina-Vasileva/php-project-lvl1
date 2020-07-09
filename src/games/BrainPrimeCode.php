@@ -8,7 +8,7 @@
 
 namespace BrainGames\games\BrainPrimeCode;
 
-use function BrainGames\Engine\engineBrainGame;
+use function BrainGames\Engine\engine;
 
 use const BrainGames\Engine\LAST_GAME;
 
@@ -51,5 +51,5 @@ function brainPrime()
         }
         $questionAndAnswer[$question] = $rightAnswer;
     }
-    engineBrainGame($questionAndAnswer, $description);
+    engine($questionAndAnswer, $description);
 }

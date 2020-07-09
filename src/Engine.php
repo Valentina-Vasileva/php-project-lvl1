@@ -14,7 +14,7 @@ const LAST_GAME = 3;
  *
  * @return nothing
  * */
-function engineBrainGame(array $questionAndAnswer, string $description)
+function engine(array $questionAndAnswer, string $description)
 {
     line();
     line('Welcome to the Brain Game!');

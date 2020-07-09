@@ -8,7 +8,7 @@
 
 namespace BrainGames\games\BrainProgCode;
 
-use function BrainGames\Engine\engineBrainGame;
+use function BrainGames\Engine\engine;
 
 use const BrainGames\Engine\LAST_GAME;
 
@@ -44,5 +44,5 @@ function brainProg()
         $question = implode(" ", $arithmeticProgression);
         $questionAndAnswer[$question] = strval($rightAnswer);
     }
-    engineBrainGame($questionAndAnswer, $description);
+    engine($questionAndAnswer, $description);
 }
